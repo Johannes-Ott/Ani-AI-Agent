@@ -1,0 +1,400 @@
+﻿[2025-08-20 21:10:24] Launcher started v32.2
+NAME              DESCRIPTION                               DOCKER ENDPOINT                             ERROR
+default           Current DOCKER_HOST based configuration   npipe:////./pipe/docker_engine              
+desktop-linux *   Docker Desktop                            npipe:////./pipe/dockerDesktopLinuxEngine   
+Using default tag: latest
+latest: Pulling from library/hello-world
+Digest: sha256:a0dfb02aac212703bfcb339d77d47ec32c8706ff250850ecc0e19c8737b18567
+Status: Image is up to date for hello-world:latest
+docker.io/library/hello-world:latest
+[2025-08-20 21:10:26] Ports selected n8n=5678 ollama=11435
+[2025-08-20 21:10:26] docker compose --env-file .env up -d
+[2025-08-20 21:10:26] Open n8n: http://localhost:5678
+[2025-08-20 21:10:26] npm install && npm run start
+[2025-08-20 21:11:55] Launcher started v32.2
+NAME              DESCRIPTION                               DOCKER ENDPOINT                             ERROR
+default           Current DOCKER_HOST based configuration   npipe:////./pipe/docker_engine              
+desktop-linux *   Docker Desktop                            npipe:////./pipe/dockerDesktopLinuxEngine   
+Using default tag: latest
+latest: Pulling from library/hello-world
+Digest: sha256:a0dfb02aac212703bfcb339d77d47ec32c8706ff250850ecc0e19c8737b18567
+Status: Image is up to date for hello-world:latest
+docker.io/library/hello-world:latest
+[2025-08-20 21:11:56] Ports selected n8n=5678 ollama=11435
+[2025-08-20 21:11:56] docker compose --env-file .env up -d
+[2025-08-20 21:11:57] Open n8n: http://localhost:5678
+[2025-08-20 21:11:57] npm install && npm run start
+[2025-08-20 21:37:14] Launcher started v32.2
+NAME              DESCRIPTION                               DOCKER ENDPOINT                             ERROR
+default           Current DOCKER_HOST based configuration   npipe:////./pipe/docker_engine              
+desktop-linux *   Docker Desktop                            npipe:////./pipe/dockerDesktopLinuxEngine   
+Using default tag: latest
+latest: Pulling from library/hello-world
+Digest: sha256:a0dfb02aac212703bfcb339d77d47ec32c8706ff250850ecc0e19c8737b18567
+Status: Image is up to date for hello-world:latest
+docker.io/library/hello-world:latest
+[2025-08-20 21:37:16] Ports selected n8n=5678 ollama=11435
+[2025-08-20 21:37:16] docker compose --env-file .env up -d
+[2025-08-20 21:37:16] Open n8n: http://localhost:5678
+[2025-08-20 21:37:16] npm install && npm run start
+[2025-08-20 22:05:37] Launcher started v32.2
+NAME              DESCRIPTION                               DOCKER ENDPOINT                             ERROR
+default           Current DOCKER_HOST based configuration   npipe:////./pipe/docker_engine              
+desktop-linux *   Docker Desktop                            npipe:////./pipe/dockerDesktopLinuxEngine   
+Using default tag: latest
+[2025-08-20 22:05:38] Ports selected n8n=5678 ollama=11435
+[2025-08-20 22:05:38] docker compose --env-file .env up -d
+[2025-08-20 22:05:38] Open n8n: http://localhost:5678
+[2025-08-20 22:05:38] npm install && npm run start
+[2025-08-20 22:07:01] Launcher started v32.2
+NAME              DESCRIPTION                               DOCKER ENDPOINT                             ERROR
+default           Current DOCKER_HOST based configuration   npipe:////./pipe/docker_engine              
+desktop-linux *   Docker Desktop                            npipe:////./pipe/dockerDesktopLinuxEngine   
+Using default tag: latest
+latest: Pulling from library/hello-world
+Digest: sha256:a0dfb02aac212703bfcb339d77d47ec32c8706ff250850ecc0e19c8737b18567
+Status: Image is up to date for hello-world:latest
+docker.io/library/hello-world:latest
+[2025-08-20 22:07:03] Ports selected n8n=5678 ollama=11435
+[2025-08-20 22:07:03] docker compose --env-file .env up -d
+[2025-08-20 22:07:03] Open n8n: http://localhost:5678
+[2025-08-20 22:07:03] npm install && npm run start
+[2025-08-21 10:37:25] Launcher started v32.2
+NAME              DESCRIPTION                               DOCKER ENDPOINT                             ERROR
+default           Current DOCKER_HOST based configuration   npipe:////./pipe/docker_engine              
+desktop-linux *   Docker Desktop                            npipe:////./pipe/dockerDesktopLinuxEngine   
+Using default tag: latest
+[2025-08-21 10:37:26] Ports selected n8n=5678 ollama=11435
+[2025-08-21 10:37:26] docker compose --env-file .env up -d
+[2025-08-21 10:37:26] Open n8n: http://localhost:5678
+[2025-08-21 10:37:26] npm install && npm run start
+[2025-08-21 10:39:08] Launcher started v32.2
+NAME              DESCRIPTION                               DOCKER ENDPOINT                             ERROR
+default           Current DOCKER_HOST based configuration   npipe:////./pipe/docker_engine              
+desktop-linux *   Docker Desktop                            npipe:////./pipe/dockerDesktopLinuxEngine   
+Using default tag: latest
+latest: Pulling from library/hello-world
+Digest: sha256:a0dfb02aac212703bfcb339d77d47ec32c8706ff250850ecc0e19c8737b18567
+Status: Image is up to date for hello-world:latest
+docker.io/library/hello-world:latest
+[2025-08-21 10:39:10] Ports selected n8n=5678 ollama=11435
+[2025-08-21 10:39:10] docker compose --env-file .env up -d
+[2025-08-21 10:39:10] Open n8n: http://localhost:5678
+[2025-08-21 10:39:10] npm install && npm run start
+[2025-08-21 10:49:37] Launcher started v32.2
+NAME              DESCRIPTION                               DOCKER ENDPOINT                             ERROR
+default           Current DOCKER_HOST based configuration   npipe:////./pipe/docker_engine              
+desktop-linux *   Docker Desktop                            npipe:////./pipe/dockerDesktopLinuxEngine   
+Using default tag: latest
+latest: Pulling from library/hello-world
+Digest: sha256:a0dfb02aac212703bfcb339d77d47ec32c8706ff250850ecc0e19c8737b18567
+Status: Image is up to date for hello-world:latest
+docker.io/library/hello-world:latest
+[2025-08-21 10:49:38] Ports selected n8n=5678 ollama=11435
+[2025-08-21 10:49:38] docker compose --env-file .env up -d
+[2025-08-21 10:49:39] Open n8n: http://localhost:5678
+[2025-08-21 10:49:39] npm install && npm run start
+[2025-08-21 10:58:29] Launcher started v32.2
+NAME              DESCRIPTION                               DOCKER ENDPOINT                             ERROR
+default           Current DOCKER_HOST based configuration   npipe:////./pipe/docker_engine              
+desktop-linux *   Docker Desktop                            npipe:////./pipe/dockerDesktopLinuxEngine   
+Using default tag: latest
+[2025-08-21 10:58:30] Ports selected n8n=5678 ollama=11435
+[2025-08-21 10:58:30] docker compose --env-file .env up -d
+[2025-08-21 10:58:30] Open n8n: http://localhost:5678
+[2025-08-21 10:58:30] npm install && npm run start
+[2025-08-21 11:10:52] Launcher started v32.2
+NAME              DESCRIPTION                               DOCKER ENDPOINT                             ERROR
+default           Current DOCKER_HOST based configuration   npipe:////./pipe/docker_engine              
+desktop-linux *   Docker Desktop                            npipe:////./pipe/dockerDesktopLinuxEngine   
+Using default tag: latest
+[2025-08-21 11:10:52] Ports selected n8n=5678 ollama=11435
+[2025-08-21 11:10:52] docker compose --env-file .env up -d
+[2025-08-21 11:10:52] ERROR: docker compose Fehler: Die Benennung "Ensure-Docker" wurde nicht als Name eines Cmdlet, einer Funktion, einer Skriptdatei oder eines ausführbaren Programms erkannt. Überprüfen Sie die Schreibweise des Namens, oder ob der Pfad korrekt ist (sofern enthalten), und wiederholen Sie den Vorgang.
+[2025-08-21 11:18:16] Launcher started v32.2
+NAME              DESCRIPTION                               DOCKER ENDPOINT                             ERROR
+default           Current DOCKER_HOST based configuration   npipe:////./pipe/docker_engine              
+desktop-linux *   Docker Desktop                            npipe:////./pipe/dockerDesktopLinuxEngine   
+Using default tag: latest
+[2025-08-21 11:18:16] Ports selected n8n=5678 ollama=11435
+[2025-08-21 11:18:16] ERROR: docker compose Fehler: Die Benennung "Ensure-Docker" wurde nicht als Name eines Cmdlet, einer Funktion, einer Skriptdatei oder eines ausführbaren Programms erkannt. Überprüfen Sie die Schreibweise des Namens, oder ob der Pfad korrekt ist (sofern enthalten), und wiederholen Sie den Vorgang.
+[2025-08-21 17:22:44][STEP] Lock gefunden, beende alte PID=20976 â€¦
+[2025-08-21 17:22:44][STEP] Lock entfernt.
+[2025-08-21 17:22:44][INFO] Launcher started v32.3
+[2025-08-21 17:22:44][STEP] PrÃ¼fe Docker Desktopâ€¦
+[2025-08-21 17:22:45][INFO] Docker ist bereit.
+[2025-08-21 17:22:45][INFO] Ports selected n8n=5678 ollama=11435
+[2025-08-21 17:22:45][STEP] Konflikt-Container 'ollama' gefunden (b8cacd5f8662), entferneâ€¦
+[2025-08-21 17:22:45][STEP] Konflikt-Container 'n8n' gefunden (66a519cc2821), entferneâ€¦
+[2025-08-21 17:22:45][STEP] docker compose --env-file '.env' up -d --remove-orphans
+[2025-08-21 17:22:46][INFO] docker compose up abgeschlossen.
+[2025-08-21 17:22:46][INFO] NAME      IMAGE                  COMMAND                  SERVICE   CREATED        STATUS                  PORTS
+[2025-08-21 17:22:46][INFO] n8n       n8nio/n8n:latest       "tini -- /docker-entÔÇª"   n8n       1 second ago   Up Less than a second   0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp
+[2025-08-21 17:22:46][INFO] ollama    ollama/ollama:latest   "/bin/ollama serve"      ollama    1 second ago   Up Less than a second   0.0.0.0:11435->11434/tcp, [::]:11435->11434/tcp
+[2025-08-21 17:22:46][INFO] Ollama API erreichbar: http://localhost:11435
+[2025-08-21 17:22:53][INFO] n8n ist bereit: http://localhost:5678
+[2025-08-21 17:22:53][INFO] Desktop-App wird gestartetâ€¦
+[2025-08-21 17:22:53][INFO] npm install
+[2025-08-21 17:22:53][ERROR] Desktop-Start fehlgeschlagen: Die Eigenschaft "Statement" wurde für dieses Objekt nicht gefunden. Vergewissern Sie sich, dass die Eigenschaft vorhanden ist.
+[2025-08-21 17:22:53][STEP] docker compose down --remove-orphans
+[2025-08-21 17:22:56][INFO] Docker-Services heruntergefahren.
+[2025-08-21 17:22:56][INFO] Lock entfernt, Launcher beendet.
+[2025-08-21 17:36:55][INFO] Launcher started v32.3
+[2025-08-21 17:36:55][STEP] PrÃ¼fe Docker Desktopâ€¦
+[2025-08-21 17:36:55][INFO] Docker ist bereit.
+[2025-08-21 17:36:55][INFO] Ports selected n8n=5678 ollama=11435
+[2025-08-21 17:36:55][STEP] docker compose --env-file '.env' up -d --remove-orphans
+[2025-08-21 17:36:56][INFO] docker compose up abgeschlossen.
+[2025-08-21 17:37:49][STEP] Lock gefunden, beende alte PID=17516 â€¦
+[2025-08-21 17:37:49][STEP] Lock entfernt.
+[2025-08-21 17:37:49][INFO] Launcher started v32.3
+[2025-08-21 17:37:49][STEP] PrÃ¼fe Docker Desktopâ€¦
+[2025-08-21 17:37:49][INFO] Docker ist bereit.
+[2025-08-21 17:37:49][INFO] Ports selected n8n=5678 ollama=11435
+[2025-08-21 17:37:49][STEP] docker compose --env-file '.env' up -d --remove-orphans
+[2025-08-21 17:37:51][INFO] docker compose up abgeschlossen.
+[2025-08-21 17:37:51][INFO] NAME      IMAGE                  COMMAND                  SERVICE   CREATED        STATUS                  PORTS
+[2025-08-21 17:37:51][INFO] n8n       n8nio/n8n:latest       "tini -- /docker-entÔÇª"   n8n       1 second ago   Up Less than a second   0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp
+[2025-08-21 17:37:51][INFO] ollama    ollama/ollama:latest   "/bin/ollama serve"      ollama    1 second ago   Up Less than a second   0.0.0.0:11435->11434/tcp, [::]:11435->11434/tcp
+[2025-08-21 17:37:51][INFO] Ollama API erreichbar: http://localhost:11435
+[2025-08-21 17:38:07][INFO] n8n ist bereit: http://localhost:5678
+[2025-08-21 17:38:07][INFO] Desktop-App wird gestartetâ€¦
+[2025-08-21 17:38:07][INFO] npm install
+[2025-08-21 17:38:07][ERROR] Desktop-Start fehlgeschlagen: Die Eigenschaft "Statement" wurde für dieses Objekt nicht gefunden. Vergewissern Sie sich, dass die Eigenschaft vorhanden ist.
+[2025-08-21 17:38:07][STEP] docker compose down --remove-orphans
+[2025-08-21 17:38:09][INFO] Docker-Services heruntergefahren.
+[2025-08-21 17:38:09][INFO] Lock entfernt, Launcher beendet.
+[2025-08-21 17:41:17][INFO] Launcher started v32.3
+[2025-08-21 17:41:17][STEP] PrÃ¼fe Docker Desktopâ€¦
+[2025-08-21 17:41:18][INFO] Docker ist bereit.
+[2025-08-21 17:41:18][INFO] Ports selected n8n=5678 ollama=11435
+[2025-08-21 17:41:18][STEP] docker compose --env-file '.env' up -d --remove-orphans
+[2025-08-21 17:41:19][INFO] docker compose up abgeschlossen.
+[2025-08-21 17:41:19][INFO] NAME      IMAGE                  COMMAND                  SERVICE   CREATED        STATUS                  PORTS
+[2025-08-21 17:41:19][INFO] n8n       n8nio/n8n:latest       "tini -- /docker-entÔÇª"   n8n       1 second ago   Up Less than a second   0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp
+[2025-08-21 17:41:19][INFO] ollama    ollama/ollama:latest   "/bin/ollama serve"      ollama    1 second ago   Up Less than a second   0.0.0.0:11435->11434/tcp, [::]:11435->11434/tcp
+[2025-08-21 17:41:19][INFO] Ollama API erreichbar: http://localhost:11435
+[2025-08-21 17:41:23][INFO] n8n ist bereit: http://localhost:5678
+[2025-08-21 17:41:23][INFO] Desktop-App wird gestartetâ€¦
+[2025-08-21 17:41:23][INFO] npm install
+[2025-08-21 17:41:23][STEP] Running: cmd.exe /c "C:\Program Files\nodejs\npm.ps1"  
+[2025-08-21 17:42:15][INFO] npm run start (warte bis beendet)
+[2025-08-21 17:42:15][INFO] Warte auf Desktop-App (PID=22732)â€¦
+[2025-08-21 17:42:28][INFO] Desktop-App beendet. Starte Cleanupâ€¦
+[2025-08-21 17:42:28][STEP] docker compose down --remove-orphans
+[2025-08-21 17:42:29][INFO] Docker-Services heruntergefahren.
+[2025-08-21 17:42:30][INFO] Lock entfernt, Launcher beendet.
+[2025-08-21 17:42:37][INFO] Launcher started v32.3
+[2025-08-21 17:42:37][STEP] PrÃ¼fe Docker Desktopâ€¦
+[2025-08-21 17:42:37][INFO] Docker ist bereit.
+[2025-08-21 17:42:37][INFO] Ports selected n8n=5678 ollama=11435
+[2025-08-21 17:42:37][STEP] docker compose --env-file '.env' up -d --remove-orphans
+[2025-08-21 17:42:38][INFO] docker compose up abgeschlossen.
+[2025-08-21 17:42:38][INFO] NAME      IMAGE                  COMMAND                  SERVICE   CREATED                  STATUS                  PORTS
+[2025-08-21 17:42:38][INFO] n8n       n8nio/n8n:latest       "tini -- /docker-entÔÇª"   n8n       Less than a second ago   Up Less than a second   0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp
+[2025-08-21 17:42:38][INFO] ollama    ollama/ollama:latest   "/bin/ollama serve"      ollama    Less than a second ago   Up Less than a second   0.0.0.0:11435->11434/tcp, [::]:11435->11434/tcp
+[2025-08-21 17:42:38][INFO] Ollama API erreichbar: http://localhost:11435
+[2025-08-21 17:42:43][INFO] n8n ist bereit: http://localhost:5678
+[2025-08-21 17:42:43][INFO] Desktop-App wird gestartetâ€¦
+[2025-08-21 17:42:43][INFO] npm install
+[2025-08-21 17:42:43][STEP] Running: cmd.exe /c "C:\Program Files\nodejs\npm.ps1"  
+[2025-08-21 17:43:44][INFO] npm run start (warte bis beendet)
+[2025-08-21 17:43:44][INFO] Warte auf Desktop-App (PID=11372)â€¦
+[2025-08-21 17:53:04][STEP] Lock gefunden, beende alte PID=17564 â€¦
+[2025-08-21 17:53:04][STEP] Lock entfernt.
+[2025-08-21 17:53:04][INFO] Launcher started v32.3
+[2025-08-21 17:53:04][STEP] PrÃ¼fe Docker Desktopâ€¦
+[2025-08-21 17:53:04][INFO] Docker ist bereit.
+[2025-08-21 17:53:04][INFO] Ports selected n8n=5678 ollama=11435
+[2025-08-21 17:53:04][STEP] Konflikt-Container 'ollama' gefunden (fdd28272885d), entferneâ€¦
+[2025-08-21 17:53:05][STEP] Konflikt-Container 'n8n' gefunden (6d1a67dbdb3c), entferneâ€¦
+[2025-08-21 17:53:05][STEP] docker compose --env-file '.env' up -d --remove-orphans
+[2025-08-21 17:53:06][INFO] docker compose up abgeschlossen.
+[2025-08-21 17:53:07][INFO] NAME      IMAGE                  COMMAND                  SERVICE   CREATED         STATUS                  PORTS
+[2025-08-21 17:53:07][INFO] n8n       n8nio/n8n:latest       "tini -- /docker-entÔÇª"   n8n       1 second ago    Up Less than a second   0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp
+[2025-08-21 17:53:07][INFO] ollama    ollama/ollama:latest   "/bin/ollama serve"      ollama    2 seconds ago   Up Less than a second   0.0.0.0:11435->11434/tcp, [::]:11435->11434/tcp
+[2025-08-21 17:53:07][INFO] Ollama API erreichbar: http://localhost:11435
+[2025-08-21 17:53:21][INFO] n8n ist bereit: http://localhost:5678
+[2025-08-21 17:53:21][INFO] Desktop-App wird gestartetâ€¦
+[2025-08-21 17:53:21][INFO] npm install
+[2025-08-21 17:53:21][STEP] Running: "C:\Program Files\nodejs\npm.cmd" install
+[2025-08-21 17:53:22][ERROR] Desktop-Start fehlgeschlagen: npm ExitCode 
+[2025-08-21 17:53:22][INFO] Lock entfernt, Launcher beendet.
+[2025-08-21 17:53:42][INFO] Launcher started v32.3
+[2025-08-21 17:53:42][STEP] PrÃ¼fe Docker Desktopâ€¦
+[2025-08-21 17:53:42][INFO] Docker ist bereit.
+[2025-08-21 17:53:42][INFO] Ports selected n8n=5678 ollama=11435
+[2025-08-21 17:53:42][STEP] Konflikt-Container 'ollama' gefunden (0afc19883b7e), entferneâ€¦
+[2025-08-21 17:53:43][STEP] Konflikt-Container 'n8n' gefunden (31f0a6fe1664), entferneâ€¦
+[2025-08-21 17:53:43][STEP] docker compose --env-file '.env' up -d --remove-orphans
+[2025-08-21 17:53:44][INFO] docker compose up abgeschlossen.
+[2025-08-21 17:53:44][INFO] NAME      IMAGE                  COMMAND                  SERVICE   CREATED        STATUS                  PORTS
+[2025-08-21 17:53:44][INFO] n8n       n8nio/n8n:latest       "tini -- /docker-entÔÇª"   n8n       1 second ago   Up Less than a second   0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp
+[2025-08-21 17:53:44][INFO] ollama    ollama/ollama:latest   "/bin/ollama serve"      ollama    1 second ago   Up Less than a second   0.0.0.0:11435->11434/tcp, [::]:11435->11434/tcp
+[2025-08-21 17:53:44][INFO] Ollama API erreichbar: http://localhost:11435
+[2025-08-21 17:53:58][INFO] n8n ist bereit: http://localhost:5678
+[2025-08-21 17:53:58][INFO] Desktop-App wird gestartetâ€¦
+[2025-08-21 17:53:58][INFO] npm install
+[2025-08-21 17:53:58][STEP] Running: "C:\Program Files\nodejs\npm.cmd" install
+[2025-08-21 17:54:00][ERROR] Desktop-Start fehlgeschlagen: npm ExitCode 
+[2025-08-21 17:54:00][INFO] Lock entfernt, Launcher beendet.
+[2025-08-21 18:37:28][INFO] Launcher started v32.3
+[2025-08-21 18:37:29][STEP] Pruefe Docker Desktop...
+[2025-08-21 18:37:29][INFO] Docker ist bereit.
+[2025-08-21 18:37:29][INFO] Ports selected n8n=5678 ollama=11435
+[2025-08-21 18:37:29][STEP] Konflikt-Container 'ollama' gefunden (f9dd0c82d8ae), entferne...
+[2025-08-21 18:37:29][STEP] Konflikt-Container 'n8n' gefunden (6884373eea24), entferne...
+[2025-08-21 18:37:30][STEP] docker compose --env-file '.env' up -d --remove-orphans
+[2025-08-21 18:37:31][INFO] docker compose up abgeschlossen.
+[2025-08-21 18:37:31][INFO] NAME      IMAGE                  COMMAND                  SERVICE   CREATED        STATUS                  PORTS
+[2025-08-21 18:37:31][INFO] n8n       n8nio/n8n:latest       "tini -- /docker-entÔÇª"   n8n       1 second ago   Up Less than a second   0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp
+[2025-08-21 18:37:31][INFO] ollama    ollama/ollama:latest   "/bin/ollama serve"      ollama    1 second ago   Up Less than a second   0.0.0.0:11435->11434/tcp, [::]:11435->11434/tcp
+[2025-08-21 18:37:31][INFO] Ollama API erreichbar: http://localhost:11435
+[2025-08-21 18:37:47][INFO] n8n ist bereit: http://localhost:5678
+[2025-08-21 18:37:47][INFO] Desktop-App wird gestartet... (Pfad: C:\projekt\ani-ai-agent-v32.3\ani-desktop)
+[2025-08-21 18:37:47][INFO] npm install
+[2025-08-21 18:37:47][STEP] Running: "C:\Program Files\nodejs\npm.cmd" install
+[2025-08-21 18:37:48][ERROR] Desktop-Start fehlgeschlagen: npm ExitCode 
+[2025-08-21 18:37:48][WARN] Kein package.json unter: C:\projekt\ani-ai-agent-v32.3\ani-desktop\ani-desktop â€“ App wird hier nicht gestartet.
+[2025-08-21 18:37:48][WARN] Keine lauffaehige App-Struktur gefunden (kein gueltiger package.json-Pfad mit 'start'-Script).
+[2025-08-21 18:37:48][INFO] Lock entfernt, Launcher beendet.
+[2025-08-21 18:44:19][INFO] Launcher started v32.3
+[2025-08-21 18:44:19][STEP] Pruefe Docker Desktop...
+[2025-08-21 18:44:19][INFO] Docker ist bereit.
+[2025-08-21 18:44:19][INFO] Ports selected n8n=5678 ollama=11435
+[2025-08-21 18:44:19][STEP] Konflikt-Container 'ollama' gefunden (8c9e03c2d789), entferne...
+[2025-08-21 18:44:20][STEP] Konflikt-Container 'n8n' gefunden (cf94f509bde1), entferne...
+[2025-08-21 18:44:20][STEP] docker compose --env-file '.env' up -d --remove-orphans
+[2025-08-21 18:44:21][INFO] docker compose up abgeschlossen.
+[2025-08-21 18:44:22][INFO] NAME      IMAGE                  COMMAND                  SERVICE   CREATED                  STATUS                  PORTS
+[2025-08-21 18:44:22][INFO] n8n       n8nio/n8n:latest       "tini -- /docker-entÔÇª"   n8n       Less than a second ago   Up Less than a second   0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp
+[2025-08-21 18:44:22][INFO] ollama    ollama/ollama:latest   "/bin/ollama serve"      ollama    Less than a second ago   Up Less than a second   0.0.0.0:11435->11434/tcp, [::]:11435->11434/tcp
+[2025-08-21 18:44:22][INFO] Ollama API erreichbar: http://localhost:11435
+[2025-08-21 18:44:36][INFO] n8n ist bereit: http://localhost:5678
+[2025-08-21 18:44:36][INFO] Desktop-App wird gestartet... (Pfad: C:\projekt\ani-ai-agent-v32.3\ani-desktop)
+[2025-08-21 18:44:36][INFO] npm install
+[2025-08-21 18:44:36][STEP] Running: "C:\Program Files\nodejs\npm.cmd" install
+[2025-08-21 18:44:37][INFO] > ani-desktop@1.3.0 postinstall
+[2025-08-21 18:44:37][INFO] > node -e "console.log('postinstall ok')"
+[2025-08-21 18:44:37][INFO] postinstall ok
+[2025-08-21 18:44:37][INFO] up to date, audited 71 packages in 1s
+[2025-08-21 18:44:37][INFO] 17 packages are looking for funding
+[2025-08-21 18:44:37][INFO]   run `npm fund` for details
+[2025-08-21 18:44:37][INFO] found 0 vulnerabilities
+[2025-08-21 18:44:37][INFO] npm run start (synchron; Log folgt unten)
+[2025-08-21 18:44:37][STEP] Running: "C:\Program Files\nodejs\npm.cmd" run start
+[2025-08-21 19:11:02][STEP] Lock gefunden, beende alte PID=16840 ...
+[2025-08-21 19:11:02][STEP] Lock entfernt.
+[2025-08-21 19:11:02][INFO] Launcher started v32.3
+[2025-08-21 19:11:02][STEP] Pruefe Docker Desktop...
+[2025-08-21 19:11:03][INFO] Docker ist bereit.
+[2025-08-21 19:11:03][INFO] Ports selected n8n=5678 ollama=11435
+[2025-08-21 19:11:03][STEP] Konflikt-Container 'ollama' gefunden (79c52eb42c64), entferne...
+[2025-08-21 19:11:03][STEP] Konflikt-Container 'n8n' gefunden (27adccc76691), entferne...
+[2025-08-21 19:11:03][STEP] docker compose --env-file '.env' up -d --remove-orphans
+[2025-08-21 19:11:04][INFO] docker compose up abgeschlossen.
+[2025-08-21 19:11:05][INFO] NAME      IMAGE                  COMMAND                  SERVICE   CREATED        STATUS                  PORTS
+[2025-08-21 19:11:05][INFO] n8n       n8nio/n8n:latest       "tini -- /docker-entÔÇª"   n8n       1 second ago   Up Less than a second   0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp
+[2025-08-21 19:11:05][INFO] ollama    ollama/ollama:latest   "/bin/ollama serve"      ollama    1 second ago   Up Less than a second   0.0.0.0:11435->11434/tcp, [::]:11435->11434/tcp
+[2025-08-21 19:11:05][INFO] Ollama API erreichbar: http://localhost:11435
+[2025-08-21 19:11:19][INFO] n8n ist bereit: http://localhost:5678
+[2025-08-21 19:11:19][INFO] Desktop-App wird gestartet... (Pfad: C:\projekt\ani-ai-agent-v32.3\ani-desktop)
+[2025-08-21 19:11:19][INFO] npm install
+[2025-08-21 19:11:19][STEP] Running: "C:\Program Files\nodejs\npm.cmd" install
+[2025-08-21 19:11:20][INFO] > ani-desktop@1.3.0 postinstall
+[2025-08-21 19:11:20][INFO] > node -e "console.log('postinstall ok')"
+[2025-08-21 19:11:20][INFO] postinstall ok
+[2025-08-21 19:11:20][INFO] up to date, audited 71 packages in 1s
+[2025-08-21 19:11:20][INFO] 17 packages are looking for funding
+[2025-08-21 19:11:20][INFO]   run `npm fund` for details
+[2025-08-21 19:11:20][INFO] found 0 vulnerabilities
+[2025-08-21 19:11:20][INFO] npm run start (synchron; Log folgt unten)
+[2025-08-21 19:11:20][STEP] Running: "C:\Program Files\nodejs\npm.cmd" run start
+[2025-08-21 19:13:02][INFO] > ani-desktop@1.3.0 start
+[2025-08-21 19:13:02][INFO] > electron .
+[2025-08-21 19:13:02][INFO] npm run start ist beendet (App geschlossen).
+[2025-08-21 19:13:02][STEP] docker compose down --remove-orphans
+[2025-08-21 19:13:04][INFO] Docker-Services heruntergefahren.
+[2025-08-21 19:13:04][INFO] Lock entfernt, Launcher beendet.
+[2025-08-21 19:56:24][INFO] Launcher started v32.3
+[2025-08-21 19:56:24][STEP] Pruefe Docker Desktop...
+[2025-08-21 19:56:24][INFO] Docker ist bereit.
+[2025-08-21 19:56:24][INFO] Ports selected n8n=5678 ollama=11435
+[2025-08-21 19:56:24][STEP] docker compose --env-file '.env' up -d --remove-orphans
+[2025-08-21 19:56:25][INFO] docker compose up abgeschlossen.
+[2025-08-21 19:56:25][INFO] NAME                          IMAGE                  COMMAND                  SERVICE   CREATED        STATUS                  PORTS
+[2025-08-21 19:56:25][INFO] ani_ai_agent_v32_3-n8n-1      n8nio/n8n:latest       "tini -- /docker-entÔÇª"   n8n       1 second ago   Up Less than a second   0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp
+[2025-08-21 19:56:25][INFO] ani_ai_agent_v32_3-ollama-1   ollama/ollama:latest   "/bin/ollama serve"      ollama    1 second ago   Up Less than a second   0.0.0.0:11435->11434/tcp, [::]:11435->11434/tcp
+[2025-08-21 19:56:25][INFO] Ollama API erreichbar: http://localhost:11435
+[2025-08-21 19:56:31][INFO] n8n ist bereit: http://localhost:5678
+[2025-08-21 19:56:31][INFO] Desktop-App wird gestartet... (Pfad: C:\projekt\ani-ai-agent-v32.3\ani-desktop)
+[2025-08-21 19:56:31][INFO] npm install
+[2025-08-21 19:56:31][STEP] Running: "C:\Program Files\nodejs\npm.cmd" install
+[2025-08-21 19:56:33][INFO] > ani-desktop@1.3.0 postinstall
+[2025-08-21 19:56:33][INFO] > node -e "console.log('postinstall ok')"
+[2025-08-21 19:56:33][INFO] postinstall ok
+[2025-08-21 19:56:33][INFO] up to date, audited 71 packages in 1s
+[2025-08-21 19:56:33][INFO] 17 packages are looking for funding
+[2025-08-21 19:56:33][INFO]   run `npm fund` for details
+[2025-08-21 19:56:33][INFO] found 0 vulnerabilities
+[2025-08-21 19:56:33][INFO] npm run start (synchron; Log folgt unten)
+[2025-08-21 19:56:33][STEP] Running: "C:\Program Files\nodejs\npm.cmd" run start
+[2025-08-21 21:20:32][INFO] > ani-desktop@1.3.0 start
+[2025-08-21 21:20:32][INFO] > electron .
+[2025-08-21 21:20:32][WARN] Error occurred in handler for 'workflows:import': Error: HTTP 401 Unauthorized
+[2025-08-21 21:20:32][WARN]     at n8nRequest (C:\projekt\ani-ai-agent-v32.3\ani-desktop\src\main.js:57:17)
+[2025-08-21 21:20:32][WARN]     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2025-08-21 21:20:32][WARN]     at async importWorkflows (C:\projekt\ani-ai-agent-v32.3\ani-desktop\src\main.js:93:20)
+[2025-08-21 21:20:32][WARN]     at async WebContents.<anonymous> (node:electron/js2c/browser_init:2:82941) {
+[2025-08-21 21:20:32][WARN]   status: 401,
+[2025-08-21 21:20:32][WARN]   body: { status: 'error', message: 'Unauthorized' }
+[2025-08-21 21:20:32][WARN] }
+[2025-08-21 21:20:32][INFO] npm run start ist beendet (App geschlossen).
+[2025-08-21 21:20:32][STEP] docker compose down --remove-orphans
+[2025-08-21 21:20:34][INFO] Docker-Services heruntergefahren.
+[2025-08-21 21:20:34][INFO] Lock entfernt, Launcher beendet.
+[2025-08-22 00:50:41][INFO] Launcher started v32.3
+[2025-08-22 00:50:41][STEP] Pruefe Docker Desktop...
+[2025-08-22 00:50:42][INFO] Docker ist bereit.
+[2025-08-22 00:50:42][INFO] Ports selected n8n=5678 ollama=11435
+[2025-08-22 00:50:42][STEP] docker compose --env-file '.env' up -d --remove-orphans
+[2025-08-22 00:50:43][INFO] docker compose up abgeschlossen.
+[2025-08-22 00:51:28][STEP] Lock gefunden, beende alte PID=7568 ...
+[2025-08-22 00:51:28][STEP] Lock entfernt.
+[2025-08-22 00:51:28][INFO] Launcher started v32.3
+[2025-08-22 00:51:28][STEP] Pruefe Docker Desktop...
+[2025-08-22 00:51:29][INFO] Docker ist bereit.
+[2025-08-22 00:51:29][INFO] Ports selected n8n=5678 ollama=11435
+[2025-08-22 00:51:29][STEP] docker compose --env-file '.env' up -d --remove-orphans
+[2025-08-22 00:51:30][INFO] docker compose up abgeschlossen.
+[2025-08-22 00:51:30][INFO] NAME                          IMAGE                  COMMAND                  SERVICE   CREATED        STATUS                  PORTS
+[2025-08-22 00:51:30][INFO] ani_ai_agent_v32_3-n8n-1      n8nio/n8n:latest       "tini -- /docker-entÔÇª"   n8n       1 second ago   Up Less than a second   0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp
+[2025-08-22 00:51:30][INFO] ani_ai_agent_v32_3-ollama-1   ollama/ollama:latest   "/bin/ollama serve"      ollama    1 second ago   Up Less than a second   0.0.0.0:11435->11434/tcp, [::]:11435->11434/tcp
+[2025-08-22 00:51:30][INFO] Ollama API erreichbar: http://localhost:11435
+[2025-08-22 00:51:36][INFO] n8n ist bereit: http://localhost:5678
+[2025-08-22 00:51:36][INFO] Desktop-App wird gestartet... (Pfad: C:\projekt\ani-ai-agent-v32.3\ani-desktop)
+[2025-08-22 00:51:36][INFO] npm install
+[2025-08-22 00:51:36][STEP] Running: "C:\Program Files\nodejs\npm.cmd" install
+[2025-08-22 00:51:39][INFO] > ani-desktop@1.3.0 postinstall
+[2025-08-22 00:51:39][INFO] > node -e "console.log('postinstall ok')"
+[2025-08-22 00:51:39][INFO] postinstall ok
+[2025-08-22 00:51:39][INFO] up to date, audited 71 packages in 1s
+[2025-08-22 00:51:39][INFO] 17 packages are looking for funding
+[2025-08-22 00:51:39][INFO]   run `npm fund` for details
+[2025-08-22 00:51:39][INFO] found 0 vulnerabilities
+[2025-08-22 00:51:39][INFO] npm run start (synchron; Log folgt unten)
+[2025-08-22 00:51:39][STEP] Running: "C:\Program Files\nodejs\npm.cmd" run start
+[2025-08-22 00:52:28][INFO] > ani-desktop@1.3.0 start
+[2025-08-22 00:52:28][INFO] > electron .
+[2025-08-22 00:52:28][WARN] Error occurred in handler for 'workflows:import': Error: HTTP 401 Unauthorized
+[2025-08-22 00:52:28][WARN]     at n8nRequest (C:\projekt\ani-ai-agent-v32.3\ani-desktop\src\main.js:57:17)
+[2025-08-22 00:52:28][WARN]     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2025-08-22 00:52:28][WARN]     at async importWorkflows (C:\projekt\ani-ai-agent-v32.3\ani-desktop\src\main.js:93:20)
+[2025-08-22 00:52:28][WARN]     at async WebContents.<anonymous> (node:electron/js2c/browser_init:2:82941) {
+[2025-08-22 00:52:28][WARN]   status: 401,
+[2025-08-22 00:52:28][WARN]   body: { status: 'error', message: 'Unauthorized' }
+[2025-08-22 00:52:28][WARN] }
+[2025-08-22 00:52:28][INFO] npm run start ist beendet (App geschlossen).
+[2025-08-22 00:52:28][STEP] docker compose down --remove-orphans
+[2025-08-22 00:52:29][INFO] Docker-Services heruntergefahren.
+[2025-08-22 00:52:29][INFO] Lock entfernt, Launcher beendet.
