@@ -1,0 +1,50 @@
+{
+  "name": "ANI AI Agent \u2013 Unity Tests",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ai-agent-unity-test",
+        "options": {}
+      },
+      "id": "wh",
+      "name": "Webhook Unity Test",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ],
+      "webhookId": "ai-agent-unity-test"
+    },
+    {
+      "parameters": {
+        "functionCode": "const mode = ($json.body?.testMode||'EditMode'); const resultsPath = ($json.body?.resultsPath||'TestResults/results.xml'); return [{ json: { action:'run_unity_tests', testMode: mode, resultsPath } }];"
+      },
+      "id": "mk",
+      "name": "Make Test Command",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        520,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "responseBody": "={{$json}}"
+      },
+      "id": "out",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        760,
+        300
+      ]
+    }
+  ],
+  "connections": {},
+  "active": false,
+  "settings": {}
+}

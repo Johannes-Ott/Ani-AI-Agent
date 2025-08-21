@@ -1,0 +1,29 @@
+﻿**********************
+nStart der Windows PowerShell-Aufzeichnung
+Startzeit: 20250821111816
+Benutzername: KIB0\johan
+RunAs-Benutzer: KIB0\johan
+Konfigurationsname: 
+Computer: KIB0 (Microsoft Windows NT 10.0.26100.0)
+Hostanwendung: powershell -NoExit -ExecutionPolicy Bypass -File .\launch_ani.ps1
+Prozess-ID: 11540
+PSVersion: 5.1.26100.4768
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.4768
+BuildVersion: 10.0.26100.4768
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Starting ANI AI Agent (v32.2)...
+Docker-Engine wird geprÃ¼ft...
+Ports: n8n=5678 ollama=11435
+docker compose wird gestartet...
+
+ERROR: docker compose Fehler: Die Benennung "Ensure-Docker" wurde nicht als Name eines Cmdlet, einer Funktion, einer Skriptdatei oder eines ausführbaren Programms erkannt. Überprüfen Sie die Schreibweise des Namens, oder ob der Pfad korrekt ist (sofern enthalten), und wiederholen Sie den Vorgang.
+LOG:   C:\Users\johan\OneDrive\Desktop\Ani AI\ani-ai-agent-v32.2\logs\launch_ani.log
+**********************
+Ende der Windows PowerShell-Aufzeichnung
+Endzeit: 20250821111816
+**********************

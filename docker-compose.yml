@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    ports:
+      - "${PORT_OLLAMA:-11435}:11434"
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    volumes:
+      - ollama_data:/root/.ollama
+
+  n8n:
+    image: n8nio/n8n:latest
+    restart: unless-stopped
+    depends_on:
+      - ollama
+    ports:
+      - "${PORT_N8N:-5678}:5678"
+    environment:
+      - N8N_PUBLIC_API_ENABLED=true       # <— Public API einschalten
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - GENERIC_TIMEZONE=Europe/Berlin
+      - N8N_DIAGNOSTICS_ENABLED=false
+      - N8N_USER_MANAGEMENT_DISABLED=false  # <— auf false, damit du in der UI API-Keys erzeugen kannst
+      - N8N_BASIC_AUTH_ACTIVE=false
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./workflows:/workflows:ro  # Workflows sichtbar
+
+
+  # (Phase 3) Python-Sandbox – später aktivieren:
+  # python-sandbox:
+  #   image: python:3.11-slim
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./sandbox:/sandbox
+  #   working_dir: /sandbox
+  #   stdin_open: true
+  #   tty: true
+
+volumes:
+  ollama_data:
+  n8n_data:
+

@@ -1,0 +1,1 @@
+Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show("Installiere Unity Hub: https://unity.com/download \nUnity Archive: https://unity.com/releases/editor/archive","Unity-Hinweis")

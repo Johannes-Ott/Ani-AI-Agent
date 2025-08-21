@@ -1,0 +1,471 @@
+{
+  "name": "ANI AI Agent \u2013 Core",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ai-agent-core",
+        "options": {}
+      },
+      "id": "wh",
+      "name": "Webhook Input",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ],
+      "webhookId": "ai-agent-core"
+    },
+    {
+      "parameters": {
+        "url": "http://ollama:11434/api/generate",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendBody": true,
+        "jsonBody": {
+          "model": "={{$json['body']['chatModel'] || 'mistral'}}",
+          "prompt": "Classify the user request into one of: chat, py, instr. Respond ONLY with one word.\\nUser: {{$json['body']['text']}}"
+        }
+      },
+      "id": "clf",
+      "name": "Classifier",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        720,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json['body']['response'].toLowerCase()}}",
+              "operation": "contains",
+              "value2": "chat"
+            }
+          ]
+        }
+      },
+      "id": "if_chat",
+      "name": "IF Chat",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        980,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json['body']['response'].toLowerCase()}}",
+              "operation": "contains",
+              "value2": "py"
+            }
+          ]
+        }
+      },
+      "id": "if_py",
+      "name": "IF Python",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        980,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json['body']['response'].toLowerCase()}}",
+              "operation": "contains",
+              "value2": "instr"
+            }
+          ]
+        }
+      },
+      "id": "if_instr",
+      "name": "IF Instr",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        980,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://ollama:11434/api/embeddings",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendBody": true,
+        "jsonBody": {
+          "model": "nomic-embed-text",
+          "input": "={{$json['body']['text']}}"
+        }
+      },
+      "id": "emb",
+      "name": "Embed Query",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/data/kb.json"
+      },
+      "id": "readkb",
+      "name": "Read kb.json",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "options": {
+          "encoding": "utf8"
+        }
+      },
+      "id": "b2j",
+      "name": "Binary \u2192 JSON",
+      "type": "n8n-nodes-base.moveBinaryData",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "function cosine(a,b){let s=0,na=0,nb=0;for(let i=0;i<a.length;i++){s+=a[i]*b[i];na+=a[i]*a[i];nb+=b[i]*b[i];}return s/(Math.sqrt(na)*Math.sqrt(nb)+1e-9);}const q=$item(0).$node['Embed Query'].json.body.embedding||$item(0).$node['Embed Query'].json.data?.[0]?.embedding;const kb=Array.isArray($json)?$json:[];const scored=kb.map(x=>({...x,score:cosine(q,x.embedding)})).sort((a,b)=>b.score-a.score).slice(0,3);const context=scored.map(s=>`(${s.source}#${s.chunk}) ${s.text}`).join('\\n---\\n');return[{json:{context,top:scored}}];"
+      },
+      "id": "topk",
+      "name": "Top-K Similarity",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1840,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://ollama:11434/api/generate",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendBody": true,
+        "jsonBody": {
+          "model": "={{$item(0).$node['Webhook Input'].json.body.chatModel || 'mistral'}}",
+          "prompt": "Use CONTEXT if relevant.\\nCONTEXT:\\n{{$json['context']}}\\n---\\nUSER: {{$item(0).$node['Webhook Input'].json.body.text}}"
+        }
+      },
+      "id": "chat",
+      "name": "Chat (RAG)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        2040,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://ollama:11434/api/generate",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendBody": true,
+        "jsonBody": {
+          "model": "={{$json['body']['codeModel'] || 'starcoder2:7b'}}",
+          "prompt": "Write only valid Python code without explanation. Return one fenced block.\\nTask: {{$json['body']['text']}}"
+        }
+      },
+      "id": "pygen",
+      "name": "Code (Python)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "const out=$json['body']?.['response']||'';const m=out.match(/```(?:python)?([\\s\\S]*?)```/);return[{json:{code:(m?m[1].trim():out.trim())}}];"
+      },
+      "id": "pyx",
+      "name": "Extract Py",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://sandbox:8000/run",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendBody": true,
+        "jsonBody": {
+          "code": "={{$json['code']}}"
+        }
+      },
+      "id": "pyexec",
+      "name": "Run Py (Sandbox)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://ollama:11434/api/generate",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendBody": true,
+        "jsonBody": {
+          "model": "={{$json['body']['instrModel'] || 'llama2:7b-chat'}}",
+          "prompt": "Answer clearly and concisely.\\nUser: {{$json['body']['text']}}"
+        }
+      },
+      "id": "instr",
+      "name": "Instr",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "const nodes=[$node['Chat (RAG)'],$node['Run Py (Sandbox)'],$node['Instr']];for(const n of nodes){if(n&&n.json)return[{json:{ok:true,result:n.json}}];}return[{json:{ok:false,error:'No output'}}];"
+      },
+      "id": "collect",
+      "name": "Collect",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        2140,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "responseBody": "={{$json}}"
+      },
+      "id": "out",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        2340,
+        240
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook Input": {
+      "main": [
+        [
+          {
+            "node": "Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classifier": {
+      "main": [
+        [
+          {
+            "node": "IF Chat",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "IF Python",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "IF Instr",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Chat": {
+      "main": [
+        [
+          {
+            "node": "Embed Query",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Embed Query": {
+      "main": [
+        [
+          {
+            "node": "Read kb.json",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read kb.json": {
+      "main": [
+        [
+          {
+            "node": "Binary \u2192 JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Binary \u2192 JSON": {
+      "main": [
+        [
+          {
+            "node": "Top-K Similarity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Top-K Similarity": {
+      "main": [
+        [
+          {
+            "node": "Chat (RAG)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chat (RAG)": {
+      "main": [
+        [
+          {
+            "node": "Collect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Python": {
+      "main": [
+        [
+          {
+            "node": "Code (Python)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Code (Python)": {
+      "main": [
+        [
+          {
+            "node": "Extract Py",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Py": {
+      "main": [
+        [
+          {
+            "node": "Run Py (Sandbox)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run Py (Sandbox)": {
+      "main": [
+        [
+          {
+            "node": "Collect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Instr": {
+      "main": [
+        [
+          {
+            "node": "Instr",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Instr": {
+      "main": [
+        [
+          {
+            "node": "Collect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect": {
+      "main": [
+        [
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {}
+}
