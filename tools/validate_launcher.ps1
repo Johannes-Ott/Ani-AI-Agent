@@ -1,0 +1,2 @@
+param([string]$File=".\launch_ani.ps1") 
+try{[System.Management.Automation.Language.Parser]::ParseFile($File,[ref]$null,[ref]$null)|Out-Null;Write-Host "Syntax OK for $File";exit 0}catch{Write-Host ("Syntax ERROR: "+$_.Exception.Message);exit 1}

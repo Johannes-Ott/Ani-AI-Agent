@@ -1,0 +1,404 @@
+{
+  "name": "ANI AI Agent \u2013 Gateway",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ai-agent",
+        "options": {}
+      },
+      "id": "wh",
+      "name": "Webhook Gateway",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        220,
+        300
+      ],
+      "webhookId": "ai-agent"
+    },
+    {
+      "parameters": {
+        "functionCode": "const b=$json.body||{};const mode=(b.mode||'').toLowerCase().trim();return[{json:{hasMode:!!mode,mode,body:b}}];"
+      },
+      "id": "hasmode",
+      "name": "Has Mode?",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json['hasMode']}}",
+              "operation": "is true"
+            }
+          ]
+        }
+      },
+      "id": "if_override",
+      "name": "IF Override",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://ollama:11434/api/generate",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendBody": true,
+        "jsonBody": {
+          "model": "={{$json['body']['chatModel'] || 'mistral'}}",
+          "prompt": "Classify the user request into one of: chat, py, instr, unity. Respond ONLY with one word.\\nUser: {{$json['body']['text']}}"
+        }
+      },
+      "id": "clf",
+      "name": "Classifier",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        920,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "const raw=$json['body']?.['response']||'';const mode=(raw||'').toLowerCase().trim();return[{json:{mode,body:$item(0).$node['Webhook Gateway'].json.body}}];"
+      },
+      "id": "mk_mode",
+      "name": "Make Mode",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json['mode']}}",
+              "operation": "contains",
+              "value2": "unity"
+            }
+          ]
+        }
+      },
+      "id": "if_unity",
+      "name": "IF Unity",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json['mode']}}",
+              "operation": "regex",
+              "value2": "^(chat|py|instr)$"
+            }
+          ]
+        }
+      },
+      "id": "if_core",
+      "name": "IF Core",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json['mode']}}",
+              "operation": "contains",
+              "value2": "unity-test"
+            }
+          ]
+        }
+      },
+      "id": "if_unitytest",
+      "name": "IF Unity-Test",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://n8n:5678/webhook/ai-agent-unity",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendBody": true,
+        "jsonBody": "={{$json['body']}}"
+      },
+      "id": "call_unity",
+      "name": "Call Unity WF",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://n8n:5678/webhook/ai-agent-core",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendBody": true,
+        "jsonBody": "={{$json['body']}}"
+      },
+      "id": "call_core",
+      "name": "Call Core WF",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://n8n:5678/webhook/ai-agent-unity-test",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendBody": true,
+        "jsonBody": "={{$json['body']}}"
+      },
+      "id": "call_unitytest",
+      "name": "Call Unity Test WF",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "return[{json:{ok:true,via:'subflow',result:$json}}];"
+      },
+      "id": "norm",
+      "name": "Normalize",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        190
+      ]
+    },
+    {
+      "parameters": {
+        "responseBody": "={{$json}}"
+      },
+      "id": "out",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        2040,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook Gateway": {
+      "main": [
+        [
+          {
+            "node": "Has Mode?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Mode?": {
+      "main": [
+        [
+          {
+            "node": "IF Override",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Override": {
+      "main": [
+        [
+          {
+            "node": "Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "IF Unity (override)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "IF Core (override)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classifier": {
+      "main": [
+        [
+          {
+            "node": "Make Mode",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Make Mode": {
+      "main": [
+        [
+          {
+            "node": "IF Unity",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "IF Unity-Test",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "IF Core",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Unity": {
+      "main": [
+        [
+          {
+            "node": "Call Unity WF",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "IF Unity-Test": {
+      "main": [
+        [
+          {
+            "node": "Call Unity Test WF",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "IF Core": {
+      "main": [
+        [
+          {
+            "node": "Call Core WF",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Call Unity WF": {
+      "main": [
+        [
+          {
+            "node": "Normalize",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call Unity Test WF": {
+      "main": [
+        [
+          {
+            "node": "Normalize",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call Core WF": {
+      "main": [
+        [
+          {
+            "node": "Normalize",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize": {
+      "main": [
+        [
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Unity (override)": {
+      "main": [
+        [],
+        []
+      ]
+    },
+    "IF Core (override)": {
+      "main": [
+        [],
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {}
+}

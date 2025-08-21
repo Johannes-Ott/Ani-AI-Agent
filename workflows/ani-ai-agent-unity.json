@@ -1,0 +1,198 @@
+{
+  "name": "ANI AI Agent \u2013 Unity",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ai-agent-unity",
+        "options": {}
+      },
+      "id": "wh",
+      "name": "Webhook Unity",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ],
+      "webhookId": "ai-agent-unity"
+    },
+    {
+      "parameters": {
+        "url": "http://ollama:11434/api/generate",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendBody": true,
+        "jsonBody": {
+          "model": "={{$json['body']['csharpModel'] || 'starcoder2:7b'}}",
+          "prompt": "You are a senior Unity/C# engineer. Produce Unity C# when asked (MonoBehaviour/Editor). Otherwise plain C#. Return ONLY a single fenced ```csharp code block.\\nTask: {{$json['body']['text']}}"
+        }
+      },
+      "id": "gen",
+      "name": "Generate C#",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        530,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "const raw=$json['body']?.['response']||'';const m=raw.match(/```(?:csharp|cs)([\\s\\S]*?)```/i);const code=(m?m[1]:raw).trim();const isUnity=/using\\s+UnityEngine\\s*;|using\\s+UnityEditor\\s*;/i.test(code);let klass=(code.match(/class\\s+(\\w+)/)||[])[1]||'GeneratedScript';const path=isUnity?`Assets/Scripts/${klass}.cs`:`${klass}.cs`;return[{json:{code,isUnity,className:klass,path}}];"
+      },
+      "id": "x",
+      "name": "Extract & Detect",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        760,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json['isUnity']}}",
+              "operation": "is true"
+            }
+          ]
+        }
+      },
+      "id": "if_u",
+      "name": "IF Unity",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        980,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "return[{json:{action:'write_unity_file',language:'csharp',path:$json['path'],code:$json['code'],notes:'File into Unity project.',next:{action:'run_unity_tests',testMode:'EditMode',resultsPath:'TestResults/results.xml'}}}];"
+      },
+      "id": "payload",
+      "name": "Unity File Payload",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://sandbox-csharp:8010/run",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendBody": true,
+        "jsonBody": {
+          "code": "={{$json['code']}}"
+        }
+      },
+      "id": "exec",
+      "name": "Run C# (Sandbox)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "responseBody": "={{$json}}"
+      },
+      "id": "out",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        310
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook Unity": {
+      "main": [
+        [
+          {
+            "node": "Generate C#",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate C#": {
+      "main": [
+        [
+          {
+            "node": "Extract & Detect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract & Detect": {
+      "main": [
+        [
+          {
+            "node": "IF Unity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Unity": {
+      "main": [
+        [
+          {
+            "node": "Unity File Payload",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Run C# (Sandbox)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Unity File Payload": {
+      "main": [
+        [
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run C# (Sandbox)": {
+      "main": [
+        [
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {}
+}
